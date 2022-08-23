@@ -1,0 +1,42 @@
+.btn {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  line-height: calc(20 / 18);
+  text-transform: uppercase;
+  font-weight: 400;
+  background-color: $purple;
+  color: $white;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px;
+  border-radius: 40px;
+
+  @include tablet {
+    font-size: 17px;
+    line-height: calc(20 / 17);
+  }
+
+  &:hover {
+    background-color: $purple-hover;
+    color: $white;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+  }
+
+  &--modal {
+    color: $white;
+    background-color: #63d1bb;
+  }
+
+  &--modal:hover {
+    background-color: rgba($color: #63d1bb, $alpha: 0.9);
+  }
+
+  &--form {
+    font-size: 17px;
+    padding-block-start: 16px;
+  }
+}

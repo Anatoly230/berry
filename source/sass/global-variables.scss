@@ -1,0 +1,35 @@
+// devices
+$mobile-min: 0;
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1439px;
+$desktop-width: 1150px;
+$max-content-width: 1050px;
+
+$scroll-width: 16px;
+
+$white: #ffffff;
+$black: #000000;
+$green: #0f805d;
+$purple: #6a107a;
+$purple-hover: #b22ec8;
+$green-darker: #5eaa2f;
+$green-promo-bg: #72b345;
+$base-gray: #cdcdcd;
+$base-gray-two: #dcdcdc;
+$pale-gray:#f2f2f2;
+$very-pale-gray:#bababa;
+
+$light-gray: #ebebeb;
+$light-gray-sec: #eaeaea;
+$whity-gray: #d9d9d9;
+
+$dark-gray: #666666;
+$off-black: #444444;
+$graphite-black: #222222;
+$status-error: #ff8282;
+
+// font parametrs
+$initial-font-size: 16;
+$root-font-size: 14;
+$heading-line-height: 1.86;

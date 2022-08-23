@@ -1,0 +1,22 @@
+.parametrs {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 17px;
+  padding-block-start: 8px;
+  padding-block-end: 8px;
+  border-block-end: 1px solid #ececec;
+
+  @include tablet {
+    grid-template-columns: 1fr 3fr;
+    gap: 30px;
+    font-size: 15px;
+    line-height: calc(20 / 15);
+    padding-block-start: 10px;
+    padding-block-end: 10px;
+  }
+
+  @include desktop {
+    padding-block-start: 5px;
+    padding-block-end: 14px;
+  }
+}

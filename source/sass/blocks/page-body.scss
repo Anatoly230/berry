@@ -1,0 +1,36 @@
+.page-body {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: "Raleway", "Arial", sans-serif;
+  background-color: $white;
+  color: $black;
+  font-weight: 400;
+  line-height: calc(24 / 15);
+
+  @include tablet {
+    font-size: 17px;
+    line-height: calc(24 / 16);
+  }
+}
+
+.page-body__header {
+  position: relative;
+  z-index: 2;
+  grid-area: header;
+  min-height: 56px;
+}
+
+.page-body__content {
+  grid-area: content;
+}
+
+.page-body__footer {
+  grid-area: footer;
+}

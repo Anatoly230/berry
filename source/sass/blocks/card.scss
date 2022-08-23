@@ -1,0 +1,156 @@
+.card {
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: initial;
+    grid-template-rows: auto 1fr;
+  }
+
+  &:hover .card__info-wrapper {
+    @include desktop {
+      box-shadow: 0 6px 10px rgba($black, 0.1);
+    }
+  }
+
+  &:active .card__info-wrapper {
+    @include desktop {
+      box-shadow: 0 3px 5px rgba($black, 0.1);
+    }
+  }
+}
+
+.card__pic-link {
+  display: block;
+  width: 100%;
+
+  @include tablet {
+    height: 100%;
+  }
+
+  @include desktop {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.card__pic {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+
+  @include tablet {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card__info-wrapper {
+  padding-block-start: 28px;
+  padding-block-end: 24px;
+  padding-inline-start: 27px;
+  padding-inline-end: 26px;
+  border: 1px solid #ececec;
+
+  @include tablet {
+    padding-block-start: 28px;
+    padding-inline-start: 33px;
+    padding-inline-end: 31px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ececec;
+    border-inline-start: none;
+  }
+
+  @include desktop {
+    border: 1px solid #ececec;
+    border-block-start: none;
+    padding-block-start: 28px;
+    padding-inline-start: 28px;
+    padding-inline-end: 31px;
+  }
+}
+
+.card__name-link {
+  display: inline-block;
+  color: $black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: calc(24 / 17);
+  margin-block-end: 5px;
+  max-width: 200px;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+    max-width: 238px;
+  }
+
+  &:hover {
+    color: rgba($color: $black, $alpha: 0.6);
+  }
+
+  &:active {
+    color: rgba($color: $black, $alpha: 0.3);
+  }
+}
+
+.card__parametrs {
+  margin-block-end: 17px;
+  font-size: 13px;
+  line-height: calc(30 / 13);
+  max-width: 200px;
+
+  @include tablet {
+    font-size: 15px;
+    line-height: calc(30 / 15);
+    max-width: 238px;
+  }
+
+  @include desktop {
+    margin-block-end: 12px;
+  }
+}
+
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  gap: 17px;
+  padding-block-start: 23px;
+  border-block-start: 1px solid #ececec;
+
+  @include tablet {
+    margin-block-start: auto;
+  }
+
+  @include desktop {
+    padding-block-start: 23px;
+  }
+}
+
+.card__price-icon {
+  opacity: 0.2;
+}
+
+.card__price-basket-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover > .card__price-icon {
+    opacity: 1;
+    fill: #63d1bb;
+  }
+
+  &:active > .card__price-icon {
+    opacity: 0.3;
+  }
+}
+
+.card__price-value {
+  color: $black;
+  font-weight: bold;
+}

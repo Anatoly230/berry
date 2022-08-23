@@ -1,0 +1,142 @@
+.contact-us {
+  background-color: $white;
+  padding-block-start: 43px;
+  padding-block-end: 39px;
+
+  @include tablet {
+    padding-block-start: 45px;
+    padding-block-end: 57px;
+  }
+
+  @include desktop {
+    @include section-wrapper;
+    padding-block-start: 71px;
+    padding-block-end: 105px;
+    display: grid;
+    grid-template-columns: 175px auto 50px 527px;
+    grid-template-rows: auto auto auto;
+
+    grid-template-areas:
+      "flag info-c . map"
+      ". btn-c . map";
+  }
+
+  &::before {
+    @include desktop {
+      justify-self: center;
+      position: relative;
+      display: block;
+      width: 47px;
+      height: 81px;
+      content: "";
+      background-image: url("/img/icons/flag.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      grid-area: flag;
+      margin-block-start: 63px;
+    }
+  }
+}
+
+
+.contact-us__info-wrapper {
+  @include section-wrapper;
+
+  @include desktop {
+    max-width: none;
+    padding: initial;
+    margin: initial;
+    margin-block-end: 30px;
+  }
+}
+
+.contact-us__title {
+  color: $black;
+  font-size: 25px;
+  line-height: calc(30 / 25);
+  margin-block-end: 28px;
+
+  @include tablet {
+    display: flex;
+    margin-block-end: rem(22.5);
+    justify-content: space-between;
+    align-items: center;
+    font-size: 43px;
+    line-height: calc(50 / 43);
+  }
+
+  @include desktop {
+    font-size: 53px;
+    line-height: calc(57 / 53);
+    padding-block-start: 80px;
+    justify-content: initial;
+    margin-block-end: 35px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+}
+
+.contact-us__title::after {
+  @include tablet {
+    position: relative;
+    display: block;
+    width: 47px;
+    height: 81px;
+    content: "";
+    background-image: url("/img/icons/flag.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-block-end: 20px;
+    margin-inline-end: 5px;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.contact-us__contact-info {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-block-end: 62px;
+
+  @include tablet {
+    margin-block-end: 47px;
+  }
+}
+
+.contact-us__map {
+  margin-block-end: 42px;
+
+  @include tablet {
+    margin-block-end: 55px;
+  }
+
+  @include desktop {
+    max-height: 457px;
+    grid-area: map;
+    margin: 0;
+  }
+}
+
+.contact-us__write {
+  font-size: 18px;
+  line-height: calc(20 / 18);
+  width: calc(100% - 60px);
+  margin: 0 auto;
+
+  @include tablet {
+    font-size: 17px;
+    line-height: calc(20 / 17);
+    max-width: 230px;
+  }
+
+  @include desktop {
+    margin: 0;
+    margin-block-start: 55px;
+    grid-area: btn-c;
+    align-self: end;
+  }
+}

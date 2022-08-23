@@ -1,0 +1,60 @@
+.quote {
+  display: none;
+  padding-block-end: 35px;
+
+  @include tablet {
+    padding-block-end: initial;
+    grid-area: quote;
+  }
+
+  &--show {
+    display: block;
+  }
+}
+
+
+.quote__text {
+  line-height: calc(30 / 15);
+  margin-block-end: 34px;
+
+  @include tablet {
+    font-size: 17px;
+    line-height: calc(30 / 17);
+    margin-block-start: 40px;
+    margin-block-end: 60px;
+  }
+
+  @include desktop {
+    margin-block-start: 35px;
+    margin-block-end: 44px;
+  }
+}
+
+.quote__author {
+  font-size: 17px;
+  line-height: calc(24 / 17);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-style: normal;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include desktop {
+    font-size: 17px;
+  }
+}
+
+.quote__author-social {
+  @include tablet {
+    font-size: 17px;
+    line-height: calc(30 / 17);
+  }
+}
+
+.quote__author-name {
+  color: $black;
+  font-weight: bold;
+}

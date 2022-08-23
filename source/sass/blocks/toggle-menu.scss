@@ -1,0 +1,53 @@
+.toggle-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 46px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+
+  &::before,
+  &::after {
+    @include toggle-parametrs;
+    background-color: $green;
+    border-radius: 5px;
+    content: "";
+    transition: transform 0.2s linear 0s;
+  }
+
+  &::before {
+    box-shadow: 0 12px 0 $green;
+    transition: box-shadow 0.2s linear 50ms;
+  }
+
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &--hide {
+    display: none;
+  }
+
+  &--close::before {
+    width: 35px;
+    height: 3px;
+    box-shadow: none;
+    transform-origin: center;
+    transform: translateY(13px) rotate(45deg);
+  }
+
+  &--close::after {
+    width: 35px;
+    height: 3px;
+    transform-origin: center;
+    transform: translateY(-13px) rotate(-45deg);
+  }
+}

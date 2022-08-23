@@ -1,0 +1,87 @@
+@mixin wrapper($content-width: $max-content-width) {
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+
+@mixin section-wrapper() {
+  width: 100%;
+  max-width: $desktop-width;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media (min-width: 321px) {
+    padding-left: calc(30 / 320 * 100%);
+    padding-right: calc(30 / 320 * 100%);
+  }
+
+  @include tablet {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@mixin section-wrapper-b() {
+  width: 100%;
+  max-width: $max-content-width;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media (min-width: 321px) {
+    padding-left: calc(30 / 320 * 100%);
+    padding-right: calc(30 / 320 * 100%);
+  }
+
+  @include tablet {
+    padding-left: calc(50 / 320 * 100%);
+    padding-right: calc(50 / 320 * 100%);
+  }
+
+  @include desktop {
+    padding-left: 224px;
+    padding-right: 224px;
+  }
+}
+
+@mixin block-width($current-media, $mxWidth) {
+  width: calc($mxWidth / $current-media * 100%);
+}
+
+@mixin part-of-block($parts, $share: 1) {
+  width: calc(100 / $parts * $share) * 1%;
+}
+
+@mixin padding-resset() {
+  padding: 0;
+}
+
+@mixin margin-resset() {
+  margin: 0;
+}
+
+@mixin reset-list-style() {
+  list-style: none;
+  padding: 0;
+}
+
+@mixin pseudo-el($form: block, $content: "") {
+  display: $form;
+  content: $content;
+  @content;
+}
+
+@mixin toggle-parametrs() {
+  width: 45px;
+  height: 6px;
+}
+
+
+// for block debug start
+@mixin show-outline($color: red, $weight: 2px) {
+  outline: $weight dashed $color;
+  outline-offset: -$weight;
+}
+// for block debug end

@@ -1,0 +1,31 @@
+.social-list {
+  @include reset-list-style;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 32px;
+
+  @include tablet {
+    max-width: 140px;
+  }
+}
+
+.social-list__item-pic {
+  margin: 0;
+  padding: 0;
+}
+
+.social-list__item-link {
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+
+  &:hover .social-list__item-pic {
+    fill: #46c1ae;
+  }
+
+  &:active .social-list__item-pic {
+    opacity: 0.3;
+  }
+}

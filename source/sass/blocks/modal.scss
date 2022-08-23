@@ -1,0 +1,139 @@
+.modal {
+  position: relative;
+  width: 100%;
+  padding: 29px 30px 46px;
+  background-color: $white;
+  box-shadow: 0 5px 10px rgba($black, 0.25);
+
+  @include tablet {
+    padding: 38px 100px 45px;
+    width: 566px;
+  }
+}
+
+.modal__close {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  transition: transform;
+  transition-duration: 100ms;
+
+  &:hover .modal__close-line {
+    background-color: #d16363;
+    opacity: 0.6;
+  }
+
+  &:active .modal__close-line {
+    background-color: #d16363;
+    opacity: 0.4;
+  }
+
+  &--show {
+    display: initial;
+  }
+}
+
+.modal__close-line {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center;
+  transform: translateX(-50%) rotate(45deg);
+  display: block;
+  width: 70%;
+  height: 2px;
+  background-color: $black;
+  opacity: 0.6;
+}
+
+.modal__close-line:nth-of-type(2) {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.modal__title {
+  text-align: center;
+  font-size: 25px;
+  line-height: calc(30 / 25);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $black;
+  max-width: 160px;
+  margin: 0 auto;
+  margin-block-end: 14px;
+
+  @include tablet {
+    font-size: 30px;
+    line-height: calc(57 / 30);
+    max-width: 380px;
+    margin-block-end: 11px;
+  }
+}
+
+.modal__desc {
+  text-align: center;
+  font-size: 15px;
+  line-height: calc(30 / 15);
+  max-width: 160px;
+  margin: 0 auto;
+  margin-block-end: 20px;
+
+  @include tablet {
+    font-size: 17px;
+    line-height: calc(30 / 17);
+    max-width: 380px;
+  }
+}
+
+.modal__choice-wrapper {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-block-end: 30px;
+}
+
+.modal__choice {
+  appearance: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -100vw;
+  top: -100vh;
+}
+
+.modal__choice-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: bold;
+  border: 2px solid rgba($off-black, 0.1);
+  width: 82px;
+  height: 52px;
+
+  @include tablet {
+    flex-grow: 1;
+  }
+
+  &:hover {
+    border-color: rgba($off-black, 0.3);
+  }
+
+  &:active {
+    border-color: #62d1ba;
+  }
+}
+
+.modal__choice:checked + .modal__choice-name {
+  border-color: #63d1bb;
+}
