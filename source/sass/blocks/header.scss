@@ -1,182 +1,49 @@
 .header {
-  position: relative;
-  background-color: #f1f1f1;
+  background-color: $blue-grey;
 
-  &--main-page {
-    background-color: #f9f9f9;
+  @include tablet {
+    box-shadow: 0 4px 4px rgba($dark-purple, 0.25);
   }
 }
 
 .header__nav {
   @include tablet {
-    position: relative;
-    $paddings: 50;
-    display: grid;
-    grid-template-columns: 48% 1fr;
-    grid-template-rows: repeat(2, auto);
-
     @include section-wrapper;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    padding-block: 26px;
   }
 
   @include desktop {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 440px 1fr 349px;
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas:
-      "main-menu logo-wrapper helper"
-      "events . sheep-info";
-  }
-
-  &::before {
-    @include tablet {
-      position: absolute;
-      left: calc((100vw - 100%) / -2);
-      grid-column: 1 / -1;
-      grid-row: 1 / 2;
-      display: block;
-      content: "";
-      width: 100vw;
-      height: 100%;
-      background-color: $white;
-      border-bottom: 1px solid rgba($black, 0.1);
-    }
-  }
-
-  &--hide {
-    @include mobile-only {
-      width: 100%;
-      top: 0;
-      position: absolute;
-      overflow-y: hidden;
-      height: 80px;
-    }
-  }
-
-  &--show {
-    @include mobile-only {
-      z-index: 1;
-      height: auto;
-    }
+    padding-block: 28px;
   }
 }
 
 .header__toggle-wrapper {
-  position: relative;
-  background-color: $white;
-  z-index: 1;
-  padding-top: 22px;
-  padding-bottom: 22px;
-  padding-left: 30px;
-  padding-right: 30px;
-  width: 100%;
-  border-bottom: 1px solid rgba($black, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-block: 13px 11px;
+  padding-inline: 28px;
+  box-shadow: 0 4px 4px rgba($dark-purple, 0.25);
 
   @include tablet {
-    background-color: initial;
-    display: flex;
-    align-items: center;
-    order: 1;
-    border: 0;
+    box-shadow: none;
     padding: 0;
-    padding-top: 22px;
-    padding-bottom: 20px;
-    width: calc(320 / (768 - 100) * 100%);
-    flex-shrink: 1;
-  }
-
-  @include desktop {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    grid-area: logo-wrapper;
-    order: initial;
-    padding-top: 9px;
-    padding-bottom: 9px;
+    flex-shrink: 0;
   }
 }
 
 .header__logo {
-  width: fit-content;
-  margin: 0 auto;
-
-  @include tablet {
-    position: relative;
-    z-index: 1;
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  @include desktop {
-    margin-left: 10px;
-  }
+  margin-inline-start: 6px;
 }
-
 
 .header__toggle-menu {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 28px;
+  margin-inline-start: 1px;
 
   @include tablet {
     display: none;
-  }
-}
-
-.header__menu {
-  @include tablet {
-    z-index: 1;
-    width: 100%;
-    order: 3;
-  }
-
-  @include desktop {
-    grid-area: main-menu;
-    width: 100%;
-    order: initial;
-  }
-
-  &--helper {
-    @include tablet {
-      justify-self: end;
-      max-width: 350px;
-      order: 2;
-      flex-grow: 1;
-    }
-
-    @include desktop {
-      justify-self: end;
-      grid-area: helper;
-      order: initial;
-    }
-  }
-
-  &--events {
-    display: none;
-
-    @include desktop {
-      display: grid;
-      grid-area: events;
-      order: initial;
-    }
-  }
-}
-
-.header__sheep-info {
-  display: none;
-
-  @include tablet {
-    font-size: 15px;
-    line-height: calc(24 / 15);
-    order: 4;
-    margin-left: auto;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-  }
-
-  @include desktop {
-    grid-area: sheep-info;
   }
 }

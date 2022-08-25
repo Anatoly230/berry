@@ -9,17 +9,10 @@
   width: 100%;
   max-width: $desktop-width;
   margin: 0 auto;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-inline: 26px;
 
-  @media (min-width: 321px) {
-    padding-left: calc(30 / 320 * 100%);
-    padding-right: calc(30 / 320 * 100%);
-  }
-
-  @include tablet {
-    padding-left: 50px;
-    padding-right: 50px;
+  @include desktop {
+    padding-inline: 156px;
   }
 }
 

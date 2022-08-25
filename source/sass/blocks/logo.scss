@@ -16,15 +16,29 @@
 }
 
 .logo__pic {
-  display: block;
-  margin: 0 auto;
+  height: 50px;
+  width: auto;
+
+  @include tablet {}
+
+  &:hover .logo__pic-leafs,
+  &:hover .logo__pic-text path {
+    fill: $green-hover;
+  }
+
+  &:active .logo__pic-leafs,
+  &:active .logo__pic-text path {
+    fill: $green-disabled;
+  }
+
+
+}
+
+.logo__pic-text {
+  display: none;
 
   @include tablet {
-    height: auto;
-    width: 114px;
+    display: initial;
   }
 
-  @include desktop {
-    width: 149px;
-  }
 }

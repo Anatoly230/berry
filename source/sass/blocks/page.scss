@@ -3,11 +3,3 @@
   height: 100%;
   background: $white;
 }
-
-.page__header {
-  &--hide {
-    @include mobile-only {
-      margin-block-end: 80px;
-    }
-  }
-}
