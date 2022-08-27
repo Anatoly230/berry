@@ -29,6 +29,12 @@
     transform: translateY(-2000px);
     transition-property: transform;
     transition-duration: 500ms;
+
+    @include tablet {
+      position: initial;
+      transform: none;
+      transition: none;
+    }
   }
 
   &--show {
