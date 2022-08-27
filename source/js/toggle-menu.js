@@ -1,19 +1,17 @@
 /* stylelint-disable */
 const header = document.querySelector(".header");
 const toggleMenu = header.querySelector(".toggle-menu");
-const nav = header.querySelector(".header__nav");
+const menu = header.querySelector(".menu");
 
-if (!nav.classList.contains("header__nav--hide")) {
-
-  nav.classList.add("header__nav--hide");
-  header.classList.add("page__header--hide");
+if (!menu.classList.contains("menu--scriptable")) {
+  menu.classList.add("menu--scriptable");
   toggleMenu.classList.remove("toggle-menu--hide");
 }
 
 toggleMenu.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("toggle-menu")) {
-    nav.classList.toggle("header__nav--show");
+    menu.classList.toggle("menu--show");
     toggleMenu.classList.toggle("toggle-menu--close");
   }
 })

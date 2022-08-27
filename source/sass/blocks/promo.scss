@@ -1,0 +1,97 @@
+.promo {
+  padding-block: 68px 192px;
+  background-color: #d4dde6;
+  background-image: url("../img/background/promo-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: left -10px bottom -240px;
+  background-size: 764px auto;
+
+  @media(min-resolution: 2dppx) {
+    background-image: url("../img/background/promo-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    background-image: url("../img/background/promo-tablet.jpg");
+    padding-block: 142px 420px;
+    background-position: center;
+    background-size: cover;
+
+    @media(min-resolution: 2dppx) {
+      background-image: url("../img/background/promo-tablet@2x.jpg");
+    }
+  }
+
+  @include tablet {
+    background-image: url("../img/background/promo-desktop.jpg");
+    padding-block: 172px 252px;
+
+    @media(min-resolution: 2dppx) {
+      background-image: url("../img/background/promo-desktop@2x.jpg");
+    }
+  }
+
+  &__wrapper {
+    @include section-wrapper;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 20px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__title {
+    color: $green;
+    text-align: center;
+    font-family: "Comfortaa", "Arial", "sans-serif";
+    font-size: 36px;
+    line-height: calc(40 / 36);
+    font-weight: 400;
+    margin-block-end: 32px;
+
+    @include tablet {
+      grid-column: 3 / -1;
+      text-align: left;
+      font-size: 48px;
+      line-height: calc(54 / 48);
+      margin-block-end: 48px;
+    }
+
+    @include desktop {
+      font-size: 52px;
+      line-height: calc(58 / 52);
+      grid-column: 5 / -1;
+    }
+  }
+
+
+  &__advantages {
+    margin-block-end: 48px;
+
+    @include tablet {
+      grid-column: 3 / -1;
+      margin-block-end: 52px;
+    }
+
+    @include desktop {
+      margin-block-end: 56px;
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__btn {
+    @include tablet {
+      width: 336px;
+      grid-column: 3 / -1;
+    }
+
+    @include desktop {
+      grid-column: 5 / -1;
+    }
+  }
+}

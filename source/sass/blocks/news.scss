@@ -1,0 +1,50 @@
+.news {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid $green;
+  border-radius: 40px;
+  padding-inline: 20px;
+  padding-block: 32px 72px;
+
+  @include tablet {
+    padding-inline: 36px;
+    min-height: 494px;
+    padding-block: 32px 106px;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: calc(23 / 20);
+    text-align: center;
+
+    @include tablet {
+      font-size: 28px;
+      line-height: calc(33 / 28);
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: calc(16 / 14);
+
+    @include tablet {
+      font-size: 16px;
+      line-height: calc(20 / 16);
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    align-self: flex-end;
+    margin-block-start: auto;
+
+    @include tablet {
+      font-size: 16px;
+      line-height: calc(20 / 16);
+
+    }
+  }
+}

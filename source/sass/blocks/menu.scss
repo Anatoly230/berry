@@ -1,7 +1,10 @@
 .menu {
+  position: relative;
+
   @include reset-list-style;
   padding-block: 16px;
   min-height: 320px;
+  background-color: $blue-grey;
 
   @include tablet {
     max-width: 496px;
@@ -17,6 +20,19 @@
     grid-template-columns: repeat(4, minmax(132px, max-content));
     max-width: 612px;
     padding-inline-end: 36px;
+  }
+
+  &--scriptable {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    transform: translateY(-2000px);
+    transition-property: transform;
+    transition-duration: 500ms;
+  }
+
+  &--show {
+    transform: translateY(0px);
   }
 }
 

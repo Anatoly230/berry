@@ -4,16 +4,26 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 32px;
+  gap: 20px;
 
-  @include tablet {
-    max-width: 140px;
+  &--right {
+    justify-content: flex-end;
+
+    @include tablet {
+      justify-content: center;
+    }
   }
 }
 
 .social-list__item-pic {
   margin: 0;
   padding: 0;
+  fill: $green;
+
+  @include tablet {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .social-list__item-link {
@@ -22,10 +32,10 @@
   align-items: center;
 
   &:hover .social-list__item-pic {
-    fill: #46c1ae;
+    fill: $green-hover;
   }
 
   &:active .social-list__item-pic {
-    opacity: 0.3;
+    fill: $green-disabled;
   }
 }

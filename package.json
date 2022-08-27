@@ -1,9 +1,9 @@
 {
   "name": "cat-energy",
   "private": true,
-  "description": "третий проект от HTML Academy - Bear",
+  "description": "4-й проект от HTML Academy - berry",
   "main": "index.js",
-  "homepage": "https://github.com/Anatoly230/baer",
+  "homepage": "https://github.com/Anatoly230/berry",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "10.4.0",

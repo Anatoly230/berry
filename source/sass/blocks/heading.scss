@@ -1,0 +1,18 @@
+.heading {
+  font-size: 36px;
+  line-height: calc(40 / 36);
+  font-weight: 400;
+  font-family: "Comfortaa", "Arial", "sans-serif";
+  text-align: center;
+  color: $green;
+
+  @include tablet {
+    font-size: 48px;
+    line-height: calc(54 / 48);
+  }
+
+  @include desktop {
+    font-size: 52px;
+    line-height: calc(58 / 52);
+  }
+}

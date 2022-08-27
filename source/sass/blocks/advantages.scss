@@ -1,0 +1,37 @@
+.advantages {
+  @include reset-list-style;
+  padding-inline: 72px 28px;
+
+  &__item {
+    position: relative;
+    font-size: 16px;
+    line-height: calc(19 / 16);
+    margin-block-end: 18px;
+
+    @include tablet {
+      font-size: 18px;
+      line-height: calc(22 / 18);
+      margin-block-end: 23px;
+    }
+
+    &:last-of-type {
+      margin-block-end: 0;
+    }
+
+    &::before {
+      position: absolute;
+      left: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      content: url("../img/icons/leaf-point.svg");
+    }
+
+    &--snow:before {
+      content: url("../img/icons/snowflake.svg");
+    }
+
+    &--car:before {
+      content: url("../img/icons/car.svg");
+    }
+  }
+}

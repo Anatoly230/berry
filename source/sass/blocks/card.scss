@@ -1,0 +1,42 @@
+.card {
+  border-radius: 40px;
+  padding-block-end: 54px;
+  box-shadow: 0 4px 4px rgba($color: #580d65, $alpha: 0.15);
+
+  &--hide {
+    display: none;
+  }
+
+  &__image {
+    margin-block-end: 28px;
+    border-radius: 40px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  &__name {
+    text-align: center;
+    margin-block-end: 28px;
+    font-size: 28px;
+    line-height: 33px;
+    color: $green;
+  }
+
+  &__parametrs {
+    margin-block-end: 38px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 18px;
+    line-height: calc(21 / 18);
+  }
+
+  &__buy-btn {
+    max-width: 220px;
+    min-width: 100px;
+    margin: 0 auto;
+  }
+}

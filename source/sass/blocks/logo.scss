@@ -1,18 +1,5 @@
 .logo {
   display: block;
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-
-  &--active:hover {
-    opacity: 1;
-    cursor: auto;
-  }
 }
 
 .logo__pic {
@@ -30,8 +17,6 @@
   &:active .logo__pic-text path {
     fill: $green-disabled;
   }
-
-
 }
 
 .logo__pic-text {
