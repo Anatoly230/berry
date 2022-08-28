@@ -4,7 +4,9 @@
   box-shadow: 0 4px 4px rgba($color: #580d65, $alpha: 0.15);
 
   &--hide {
-    display: none;
+    @include tablet-only {
+      display: none;
+    }
   }
 
   &__image {
@@ -18,11 +20,17 @@
   }
 
   &__name {
+    display: block;
+    text-decoration: none;
     text-align: center;
     margin-block-end: 28px;
     font-size: 28px;
     line-height: 33px;
     color: $green;
+
+    &:hover {
+      color: $green-hover;
+    }
   }
 
   &__parametrs {

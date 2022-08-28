@@ -294,6 +294,11 @@
       background-color: $green-hover;
     }
 
+    &--text {
+margin-inline-start: 12px;
+margin-block-end: 4px;
+    }
+
     &--required::after {
       content: "*";
       margin-inline-start: 2px;

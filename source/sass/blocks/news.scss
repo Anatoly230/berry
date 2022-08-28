@@ -6,12 +6,26 @@
   border: 2px solid $green;
   border-radius: 40px;
   padding-inline: 20px;
-  padding-block: 32px 72px;
+  padding-block: 32px 40px;
 
   @include tablet {
     padding-inline: 36px;
     min-height: 494px;
-    padding-block: 32px 106px;
+    padding-block: 32px 60px;
+  }
+
+  &::after {
+    content: "";
+    background-image: url("../img/icons/branch.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 32px;
+
+    @include tablet {
+      height: 46px;
+    }
   }
 
   &__title {

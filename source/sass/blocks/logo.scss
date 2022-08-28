@@ -24,6 +24,11 @@
   &:active .logo__pic-text path {
     fill: $green-disabled;
   }
+
+  &--active:hover .logo__pic-leafs,
+  &--active:hover .logo__pic-text path  {
+    fill: $green;
+  }
 }
 
 .logo__pic-text {
