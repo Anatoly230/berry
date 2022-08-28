@@ -1,5 +1,12 @@
 .logo {
   display: block;
+  width: 42px;
+  overflow: hidden;
+
+  @include tablet {
+    width: auto;
+    overflow: auto;
+  }
 }
 
 .logo__pic {

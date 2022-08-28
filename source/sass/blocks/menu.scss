@@ -26,9 +26,9 @@
     z-index: 1;
     position: absolute;
     width: 100%;
-    transform: translateY(-2000px);
-    transition-property: transform;
-    transition-duration: 500ms;
+    transform: translateY(-5000px);
+    // transition-property: transform;
+    // transition-duration: 400ms;
 
     @include tablet {
       position: initial;

@@ -1,95 +1,363 @@
+.order {
+  &:before {
+    margin-block-end: 64px;
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    height: calc(84 / 320 * 100vw);
+    max-height: 200px;
+    content: "";
+    background-image: url("../img/background/berries-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+
+    @media(min-resolution: 2dppx) {
+      background-image: url("../img/background/berries-mobile@2x.jpg");
+    }
+
+    @include tablet {
+      background-image: url("../img/background/berries-tablet.jpg");
+
+      @media(min-resolution: 2dppx) {
+        background-image: url("../img/background/berries-tablet@2x.jpg");
+      }
+    }
+
+    @include desktop {
+      background-image: url("../img/background/berries-desktop.jpg");
+
+      @media(min-resolution: 2dppx) {
+        background-image: url("../img/background/berries-desktop@2x.jpg");
+      }
+    }
+  }
+
+  &__title {
+    width: calc(172 / 320 * 100%);
+    max-width: 400px;
+    margin-inline: auto;
+    margin-block: 0 32px;
+  }
+
+  &__desc {
+    margin-inline: auto;
+    padding-block-end: 74px;
+    position: relative;
+    text-align: center;
+    min-width: 223px;
+    width: calc(223 / 320 * 100%);
+    max-width: 420px;
+    font-size: 16px;
+    line-height: calc(19 / 16);
+
+    @include tablet {
+      max-width: 529px;
+      width: calc(474 / 768 * 100%);
+      font-size: 18px;
+      line-height: calc(22 / 18);
+    }
+  }
+
+  &__set {
+    @include section-wrapper;
+
+    @include tablet {
+      width: calc(624 / 768 * 100%);
+      padding: 0;
+      max-width: 792px;
+    }
+  }
+
+  &__contacts {}
+}
+
 .form {
-  background-color: $white;
-  padding-inline-start: 30px;
-  padding-inline-end: 30px;
-  padding-block-start: 17px;
-  padding-block-end: 55px;
 
-  @include tablet {
-    padding-block-start: 54px;
-    padding-block-end: 49px;
-    padding-inline-start: 0;
-    padding-inline-end: 0;
+  position: relative;
+  padding-block: 50px 121px;
+
+  &__field {
+    margin-block-end: 32px;
+
+    @include tablet {}
+
+    &:last-of-type {
+      margin-block-end: 36px;
+    }
   }
 
-  @include desktop {
-    padding-block-start: 99px;
-  }
-}
-
-.form__section {
-  @include tablet {
-    background-color: #f1f1f1;
+  &__submit {
+    @include tablet {
+      width: 336px;
+      margin-inline: auto;
+    }
   }
 }
 
-.form__desc {
-  @include tablet {
-    @include section-wrapper;
+.field-group {
+  padding: 0;
+  border: none;
+
+  &--berry {
+    @include tablet-only {
+      padding-inline: 46px 88px;
+    }
   }
 
-  @include desktop {
+  &--storage,
+  &--receipt {
+    @include tablet-only {
+      width: calc(489/ 624 * 100%);
+      padding-inline-start: 46px;
+    }
+
+    @include desktop {
+      padding-inline-end: 80px;
+    }
+  }
+
+  &--contacts {
+    @include desktop {
+      padding-inline-end: 166px;
+
+    }
+  }
+
+  &__title {
+    margin-block-end: 32px;
+    font-size: 20px;
+    line-height: calc(23 / 20);
+    color: $green;
+
+    @include tablet {
+      font-size: 28px;
+      line-height: calc(33 / 28);
+    }
+  }
+
+  &__wrapper {
     display: grid;
-    grid-template-columns: 150px 700px 1fr;
-    column-gap: 25px;
+    align-items: start;
+
+    @include tablet {
+      row-gap: 32px;
+    }
+
+    &--storage {
+      @include tablet {
+      }
+    }
+
+
+    &--receipt {
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 35px;
+        align-items: center;
+      }
+    }
+
+    &--contacts {
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 24px;
+      }
+
+      & .field-group__item:nth-of-type(1n) {
+        grid-column: 1 / -1;
+      }
+
+      & .field-group__item:first-of-type {
+        grid-column: 1 / 2;
+      }
+
+      & .field-group__item:nth-of-type(2) {
+        grid-column: 1 / 2;
+      }
+
+      & .field-group__item:nth-of-type(3) {
+        grid-column: 2 / -1;
+      }
+
+      // & .field-group__item:last-of-type,
+      // & .field-group__item:nth{
+      //  grid-column: 1 / -1;
+      // }
+    }
+  }
+.field-group__wrapper--storage {
+  align-items: start;
+}
+  &__item {
+    margin-block-end: 32px;
+
+    @include tablet {
+      margin-block-end: 0;
+    }
   }
 }
 
-.form__desc-text {
-  font-size: 13px;
-  line-height: calc(20 / 13);
+.field {
+  display: flex;
+  flex-direction: column;
 
-  @include tablet {
-    font-size: 17px;
-    line-height: calc(30 / 17);
-  }
-
-  @include desktop {
-    grid-column: 2 / -2;
-  }
-}
-
-.form__submit-wrapper {
-  padding-block-start: 11px;
-
-  @include tablet {
-    @include section-wrapper;
-    display: grid;
-    grid-template-columns: 230px 1fr;
-    gap: 20px;
-    padding: 0;
-  }
-
-  @include desktop {
-    grid-template-columns: 150px 230px 445px 1fr;
-    column-gap: 25px;
-  }
-}
-
-.form__submit-obligatory {
-  margin-block-end: 30px;
-  font-size: 14px;
-  line-height: calc(16 / 14);
-
-  @include tablet {
-    font-size: 17px;
-    line-height: calc(30 / 17);
+  &:last-of-type:not(&:first-of-type) {
     margin: 0;
-    justify-self: end;
-    align-self: center;
   }
 
-  @include desktop {
-    grid-column: 3 / 4;
+  &--hide-tablet {
+    @include tablet-only {
+      visibility: hidden;
+    }
+  }
+
+  &__item {
+    border: 1px solid $green;
+    border-radius: 20px;
+    padding-inline: 12px;
+    padding-block: 16px;
+    font-size: 16px;
+    line-height: calc(20 / 16);
+
+    &--message {
+      height: 124px;
+    }
+
+    &:hover {
+      border-color: $green-hover;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border-color: $green-hover;
+    }
+
+    &::placeholder {
+      color: rgba($black, 0.3);
+      font-size: 16px;
+      line-height: calc(20 / 16);
+
+      @include tablet {
+        font-size: 19px;
+        line-height: calc(19 / 18);
+      }
+    }
+  }
+
+  &__item-select {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    margin: -1;
+    width: 1;
+    height: 1;
+
+    &:hover .field__thing-item {
+      border-color: red;
+    }
+
+    &:active .field__thing-item {
+      border-color: rgba($color: $black, $alpha: 0.3);
+    }
+  }
+
+
+  &__name {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    line-height: calc(19 / 16);
+
+    @include tablet {
+      font-size: 18px;
+      line-height: calc(22 / 18);
+    }
+
+    &--short {
+      width: 230px;
+    }
+
+    &--middle {
+      width: 240px;
+    }
+
+    &:hover .field__thing-item,
+    &:hover .field__thing-item--checkbox::before {
+      border-color: $green-hover;
+    }
+
+    &:hover .field__thing-item--radio::before {
+      background-color: $green-hover;
+    }
+
+    &--required::after {
+      content: "*";
+      margin-inline-start: 2px;
+      color: $error;
+    }
+  }
+
+  &__thing-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 2px solid $green;
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    margin-inline-end: 12px;
+
+    &::before {
+      position: relative;
+      content: "";
+      opacity: 0;
+    }
+
+    &:hover::before {
+      transform: rotate(-45deg) scale(105%);
+    }
+
+    &--radio {
+      width: 21px;
+      height: 21px;
+      margin-inline-end: 14px;
+      border-radius: 50%;
+    }
+
+    &--radio::before {
+      border-radius: 50%;
+      width: 9px;
+      height: 9px;
+      background-color: green;
+    }
+
+    &--checkbox::before {
+      border: 2px solid $green;
+      border-block-start: none;
+      border-inline-end: none;
+      top: -10%;
+      transform: rotate(-45deg);
+      width: 13px;
+      height: 7px;
+    }
   }
 }
 
-.form__submit-btn {
-  @include tablet {
-    order: -1;
-  }
+.field__item-select:checked+.field__name>.field__thing-item::before {
+  opacity: 1;
+}
 
-  @include desktop {
-    grid-column: 2 / 3;
-  }
+.field__item-select:disabled+.field__name>.field__thing-item {
+  border-color: $leaf-grey;
+}
+
+.field__item-select:focus-visible+.field__name {
+  outline: 2px solid rgba(#62d1ba, 0.7);
+  outline-offset: -2px;
 }
