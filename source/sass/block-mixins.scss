@@ -7,12 +7,12 @@
 
 @mixin section-wrapper() {
   width: 100%;
-  max-width: $desktop-width;
   margin: 0 auto;
-  padding-inline: 26px;
+  padding-inline: 28px;
 
   @include desktop {
-    padding-inline: 156px;
+    padding-inline: 0;
+    max-width: 1125px;
   }
 }
 

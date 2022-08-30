@@ -1,0 +1,226 @@
+.field {
+  display: flex;
+  flex-direction: column;
+
+  // &:last-of-type:not(&:first-of-type) {
+  //   margin: 0;
+  // }
+
+  &--hide-tablet {
+    @include tablet-only {
+      visibility: hidden;
+    }
+  }
+}
+
+.field__item {
+  border: 1px solid $green;
+  border-radius: 20px;
+  padding-inline: 12px;
+  padding-block: 16px;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+
+  &--address {
+    padding-block-end: 51px;
+
+    @include tablet {
+      padding-block-end: 16px;
+    }
+  }
+
+  &--message {
+    height: 124px;
+
+    @include tablet {
+      height: 144px;
+    }
+  }
+
+  &:hover {
+    border-color: $green-hover;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    border-color: $green-hover;
+  }
+
+  &::placeholder {
+    color: rgba($black, 0.3);
+    font-size: 16px;
+    line-height: calc(20 / 16);
+  }
+
+  &:invalid {
+    border-color: $error;
+  }
+}
+
+.field__item-select {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  margin: -1;
+  width: 1;
+  height: 1;
+
+  &:active .field__thing-item {
+    border-color: rgba($color: $black, $alpha: 0.3);
+  }
+
+  &:checked + .field__name > .field__thing-item::before {
+    opacity: 1;
+  }
+
+  &:disabled + .field__name > .field__thing-item {
+    border-color: $leaf-grey;
+    margin-inline-start: 2px;
+  }
+
+  &:focus-visible + .field__name {
+    outline: 2px solid rgba(#62d1ba, 0.7);
+    outline-offset: -2px;
+  }
+}
+
+.field__name {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+
+  @include tablet {
+    font-size: 18px;
+    line-height: calc(22 / 18);
+  }
+
+  &--short {
+    width: 220px;
+
+    @include desktop {
+      width: 255px;
+    }
+  }
+
+  &--middle {
+    width: 240px;
+
+    @include tablet {
+      width: 249px;
+    }
+
+    @include desktop {
+      width: 353px;
+    }
+  }
+
+  &--small {
+    @include mobile-only {
+      font-size: 14px;
+      line-height: calc(16 / 14);
+    }
+  }
+
+  &:hover .field__thing-item,
+  &:hover .field__thing-item--checkbox::before {
+    border-color: $green-hover;
+  }
+
+  &:hover .field__thing-item--radio::before {
+    background-color: $green-hover;
+  }
+
+  &--text {
+    margin-inline-start: 12px;
+    margin-block-end: 4px;
+
+    @include tablet {
+      margin-block-end: 2px;
+      font-size: 16px;
+      line-height: calc(20 / 16);
+    }
+  }
+
+  &--message {
+    margin-inline-start: 22px;
+    margin-block-end: 8px;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+
+    @include tablet {
+      margin-inline-start: 12px;
+      margin-block-end: 4px;
+      font-size: 16px;
+      line-height: calc(20 / 16);
+    }
+  }
+
+  &--required::after {
+    content: "*";
+    margin-inline-start: 2px;
+    color: $error;
+  }
+}
+
+.field__thing-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: 2px solid $green;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  margin-inline-end: 12px;
+
+  &::before {
+    position: relative;
+    content: "";
+    opacity: 0;
+  }
+
+  &:hover::before {
+    transform: rotate(-45deg) scale(105%);
+  }
+
+  &--radio {
+    width: 21px;
+    height: 21px;
+    margin-inline-end: 14px;
+    border-radius: 50%;
+  }
+
+  &--radio::before {
+    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    background-color: $green;
+  }
+
+  &--checkbox::before {
+    border: 2px solid $green;
+    border-block-start: none;
+    border-inline-end: none;
+    top: -10%;
+    transform: rotate(-45deg);
+    width: 13px;
+    height: 7px;
+  }
+
+  &--indent {
+    margin-inline-end: 12px;
+
+    @include tablet {
+      margin-inline-end: 22px;
+    }
+
+    @include desktop {
+      margin-inline-end: 12px;
+    }
+  }
+}

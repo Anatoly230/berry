@@ -2,6 +2,8 @@
   background-color: $blue-grey;
 
   @include tablet {
+    position: relative;
+    z-index: 1;
     box-shadow: 0 4px 4px rgba($dark-purple, 0.25);
   }
 }
@@ -14,11 +16,14 @@
     display: flex;
     gap: 50px;
     justify-content: space-between;
-    padding-block: 26px;
+    padding-inline: 35px 25px;
+    padding-block: 28px 22px;
   }
 
   @include desktop {
-    padding-block: 28px;
+    padding-block: 30px 23px;
+    padding-inline: 0;
+    padding-inline-start: 8px;
   }
 }
 
@@ -30,8 +35,8 @@
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  padding-block: 13px 11px;
-  padding-inline: 28px;
+  padding-block: 13px 5px;
+  padding-inline: 34px 28px;
   box-shadow: 0 4px 4px rgba($dark-purple, 0.25);
 
   @include tablet {
@@ -41,12 +46,8 @@
   }
 }
 
-.header__logo {
-  margin-inline-start: 6px;
-}
-
 .header__toggle-menu {
-  margin-inline-start: 1px;
+  margin-block-end: 7px;
 
   @include tablet {
     display: none;

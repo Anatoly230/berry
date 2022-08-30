@@ -3,7 +3,7 @@
 
   @include reset-list-style;
   padding-block: 16px;
-  min-height: 320px;
+  min-height: 360px;
   background-color: $blue-grey;
 
   @include tablet {
@@ -17,8 +17,9 @@
   }
 
   @include desktop {
+    gap: 28px;
     grid-template-columns: repeat(4, minmax(132px, max-content));
-    max-width: 612px;
+    max-width: 648px;
     padding-inline-end: 36px;
   }
 
@@ -27,8 +28,6 @@
     position: absolute;
     width: 100%;
     transform: translateY(-5000px);
-    // transition-property: transform;
-    // transition-duration: 400ms;
 
     @include tablet {
       position: initial;
@@ -38,13 +37,13 @@
   }
 
   &--show {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
 .menu__item {
   padding-inline: 40px;
-  padding-block: 16px;
+  padding-block: 17px 10px;
 
   @include tablet {
     padding: 0;

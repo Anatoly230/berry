@@ -1,0 +1,86 @@
+.order {
+  &::before {
+    margin-block-end: 64px;
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    height: calc(84 / 320 * 100vw);
+    max-height: 200px;
+    content: "";
+    background-color: #fad6e4;
+    background-image: url("../img/background/berries-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/background/berries-mobile@2x.jpg");
+    }
+
+    @include tablet {
+      background-image: url("../img/background/berries-tablet.jpg");
+      margin-block-end: 99px;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/background/berries-tablet@2x.jpg");
+      }
+    }
+
+    @include desktop {
+      background-image: url("../img/background/berries-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/background/berries-desktop@2x.jpg");
+      }
+    }
+  }
+}
+
+.order__title {
+  width: calc(172 / 320 * 100%);
+  max-width: 400px;
+  margin-inline: auto;
+  margin-block: 0 32px;
+
+  @include tablet {
+    margin-block-end: 49px;
+  }
+}
+
+.order__desc {
+  margin-inline: auto;
+  padding-block-end: 74px;
+  position: relative;
+  text-align: center;
+  min-width: 222px;
+  width: calc(221 / 320 * 100%);
+  max-width: 420px;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+
+  @include tablet {
+    max-width: 529px;
+    width: calc(474 / 768 * 100%);
+    font-size: 18px;
+    line-height: calc(22 / 18);
+  }
+
+  @include desktop {
+    padding-block-end: 89px;
+  }
+}
+
+.order__set {
+  @include section-wrapper;
+  padding-inline: 26px;
+
+  @include tablet {
+    width: calc(624 / 768 * 100%);
+    padding: 0;
+    max-width: 792px;
+  }
+
+  @include desktop {
+    max-width: none;
+  }
+}

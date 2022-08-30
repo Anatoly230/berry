@@ -6,92 +6,105 @@
   background-position: left -10px bottom -240px;
   background-size: 764px auto;
 
-  @media(min-resolution: 2dppx) {
+  @media (min-resolution: 2dppx) {
     background-image: url("../img/background/promo-mobile@2x.jpg");
   }
 
   @include tablet {
     background-image: url("../img/background/promo-tablet.jpg");
-    padding-block: 142px 420px;
+    padding-block: 143px 420px;
     background-position: center;
     background-size: cover;
 
-    @media(min-resolution: 2dppx) {
+    @media (min-resolution: 2dppx) {
+      background-position: left;
       background-image: url("../img/background/promo-tablet@2x.jpg");
     }
   }
 
-  @include tablet {
+  @include desktop {
+    background-size: contain;
     background-image: url("../img/background/promo-desktop.jpg");
     padding-block: 172px 252px;
 
-    @media(min-resolution: 2dppx) {
+    @media (min-resolution: 2dppx) {
       background-image: url("../img/background/promo-desktop@2x.jpg");
     }
   }
+}
 
-  &__wrapper {
-    @include section-wrapper;
+.promo__wrapper {
+  @include section-wrapper;
 
-    @include tablet {
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      column-gap: 20px;
-    }
-
-    @include desktop {
-      grid-template-columns: repeat(12, 1fr);
-      column-gap: 24px;
-    }
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 20px;
   }
 
-  &__title {
-    color: $green;
-    text-align: center;
-    font-family: "Comfortaa", "Arial", "sans-serif";
-    font-size: 36px;
-    line-height: calc(40 / 36);
-    font-weight: 400;
-    margin-block-end: 32px;
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+  }
+}
 
-    @include tablet {
-      grid-column: 3 / -1;
-      text-align: left;
-      font-size: 48px;
-      line-height: calc(54 / 48);
-      margin-block-end: 48px;
-    }
+.promo__title {
+  color: $green;
+  text-align: center;
+  font-family: "Comfortaa", "Arial", sans-serif;
+  font-size: 36px;
+  line-height: calc(40 / 36);
+  font-weight: 400;
+  margin-block-end: 38px;
 
-    @include desktop {
-      font-size: 52px;
-      line-height: calc(58 / 52);
-      grid-column: 5 / -1;
-    }
+  @include tablet {
+    grid-column: 3 / -1;
+    text-align: left;
+    font-size: 48px;
+    line-height: calc(54 / 48);
+    margin-block-end: 49px;
   }
 
+  @include desktop {
+    font-size: 52px;
+    line-height: calc(58 / 52);
+    grid-column: 5 / -1;
+    margin-block-end: 57px;
+  }
+}
 
-  &__advantages {
-    margin-block-end: 48px;
+.promo__title-break {
+  @include tablet {
+    display: none;
+  }
+}
 
-    @include tablet {
-      grid-column: 3 / -1;
-      margin-block-end: 52px;
-    }
+.promo__advantages {
+  margin-block-end: 54px;
 
-    @include desktop {
-      margin-block-end: 56px;
-      grid-column: 5 / -1;
-    }
+  @include tablet {
+    grid-column: 3 / -1;
+    margin-block-end: 54px;
   }
 
-  &__btn {
-    @include tablet {
-      width: 336px;
-      grid-column: 3 / -1;
-    }
+  @include desktop {
+    margin-block-end: 57px;
+    grid-column: 5 / -1;
+  }
+}
 
-    @include desktop {
-      grid-column: 5 / -1;
-    }
+.promo__btn {
+  min-height: 56px;
+  letter-spacing: 1.3px;
+
+  @include tablet {
+    min-height: 68px;
+    width: 336px;
+    grid-column: 3 / -1;
+  }
+
+  @include desktop {
+    grid-column: 5 / -1;
+    margin-inline-start: 36px;
   }
 }

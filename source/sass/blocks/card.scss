@@ -4,47 +4,62 @@
   box-shadow: 0 4px 4px rgba($color: #580d65, $alpha: 0.15);
 
   &--hide {
-    @include tablet-only {
+    @include mobile-only {
       display: none;
     }
   }
+}
 
-  &__image {
-    margin-block-end: 28px;
-    border-radius: 40px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    width: 100%;
-    max-height: 220px;
-    object-fit: cover;
+.card__image {
+  margin-block-end: 21px;
+  border-radius: 40px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 180px;
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+
+  @include tablet {
+    margin-block-end: 23px;
   }
+}
 
-  &__name {
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    margin-block-end: 28px;
-    font-size: 28px;
-    line-height: 33px;
-    color: $green;
+.card__name {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  margin-block-end: 26px;
+  font-size: 28px;
+  line-height: 33px;
+  color: $green;
+  padding-inline: 20px;
 
-    &:hover {
-      color: $green-hover;
-    }
+  &:hover {
+    color: $green-hover;
   }
+}
 
-  &__parametrs {
-    margin-block-end: 38px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    font-size: 18px;
-    line-height: calc(21 / 18);
-  }
+.card__parametrs {
+  margin-block-end: 38px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  line-height: calc(21 / 18);
+}
 
-  &__buy-btn {
-    max-width: 220px;
-    min-width: 100px;
-    margin: 0 auto;
-  }
+.card__price-value {
+  margin-inline-start: 8px;
+  padding-inline-end: 20px;
+}
+
+.card__price {
+  padding-inline-start: 20px;
+}
+
+.card__buy-btn {
+  max-width: 220px;
+  min-width: 100px;
+  margin: 0 auto;
 }

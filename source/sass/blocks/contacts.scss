@@ -1,5 +1,5 @@
 .contacts {
-  padding-block: 86px 64px;
+  padding-block: 86px 62px;
 
   @include tablet {
     padding-block: 72px 100px;
@@ -7,13 +7,19 @@
 
   @include desktop {
     @include section-wrapper;
-    padding-block: 100px 100px;
+    padding-block: 100px 81px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: 20px;
   }
 
-  &__wrapper {
+  &--form {
+    @include mobile-only {
+      padding-block-start: 61px;
+    }
+  }
+
+  .contacts__wrapper {
     @include section-wrapper;
 
     @include tablet {
@@ -24,89 +30,129 @@
     }
 
     @include desktop {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
       margin: 0;
       padding: 0;
       grid-column: 4 / -1;
     }
   }
+}
 
-  &__title {
-    margin-block-end: 64px;
+.contacts__title {
+  margin-block-end: 64px;
+  padding-inline-end: 5px;
 
-    @include tablet {
-      margin-block-end: 72px;
-      max-width: 350px;
-      grid-column: 1 / -1;
-      justify-self: center;
-    }
-
-    @include desktop {
-      margin-block-end: 72px;
-      max-width: 380px;
-      grid-column: 1 / -1;
-      justify-self: center;
-    }
+  @include tablet {
+    padding-inline-end: 15px;
+    margin-block-end: 72px;
+    max-width: 350px;
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 
-  &__desc {
-    text-align: center;
-    margin-block-end: 34px;
+  @include desktop {
+    padding-inline-end: 12px;
+    margin-block-start: 21px;
+    margin-block-end: 49px;
+    max-width: 380px;
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+.contacts__desc {
+  text-align: center;
+  margin-block-end: 34px;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+
+  @include tablet {
+    font-size: 20px;
+    line-height: calc(23 / 20);
+    grid-column: 3 / -1;
+    justify-self: start;
+    margin-block-end: 27px;
+    padding-inline-start: 6px;
+  }
+
+  @include desktop {
+    grid-column: 2 / -1;
+    margin-block-end: 27px;
+    padding-inline-start: 3px;
+  }
+}
+
+.contacts__info-item {
+  position: relative;
+  margin: 0;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  font-style: normal;
+  margin-block-end: 18px;
+  padding-inline-start: 31px;
+
+  @include tablet {
     font-size: 16px;
-    line-height: calc(19 / 16);
+    line-height: calc(20 / 16);
+    grid-column: 3 / -1;
+    justify-self: start;
+    padding-inline-start: 42px;
+    margin-block-end: 23px;
+  }
+
+  @include desktop {
+    padding-inline-start: 38px;
+    grid-column: 2 / -1;
+  }
+
+  &--tel {
+    margin-block-end: 29px;
 
     @include tablet {
-      font-size: 20px;
-      line-height: calc(23 / 20);
-      grid-column: 3 / -1;
-      justify-self: start;
+      margin-block-end: 25px;
     }
   }
 
-  &__info-item {
-    position: relative;
-    margin: 0;
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: calc(16 / 14);
-    font-style: normal;
-    margin-block-end: 18px;
-    margin-block-end: 18px;
-    padding-inline-start: 36px;
+  &--mail {
+    margin-block-end: 35px;
 
     @include tablet {
-      font-size: 16px;
-      line-height: calc(20 / 16);
-      grid-column: 3 / -1;
-      justify-self: start;
-    }
-
-    &:hover:not(&--addres) {
-      color: $green-hover;
-    }
-
-    &:active {
-      color: $green;
+      margin-block-end: 45px;
     }
   }
 
-  &__info-item:last-of-type:not(&__info-item:first-of-type) {
-    margin-block-end: 40px;
+  &:hover:not(&--addres) {
+    color: $green-hover;
   }
 
-  .contacts__info-icon {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    fill: currentColor;
+  &:active {
+    color: $green;
+  }
+}
+
+.contacts__info-icon {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: currentColor;
+
+  @include tablet {
+    left: 14px;
   }
 
-  &__map {
-    @include desktop {
-      grid-column: 1 / 4;
-      grid-row: 1 / 2;
-    }
+  @include desktop {
+    left: 10px;
+  }
+}
+
+.contacts__map {
+  @include desktop {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
   }
 }

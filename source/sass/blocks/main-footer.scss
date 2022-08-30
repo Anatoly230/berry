@@ -7,73 +7,107 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-    padding-block: 17px 20px;
+    padding-block: 15px 20px;
 
     @include tablet {
-      padding-block: 29px 26px;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      align-items: start;
+      padding-block: 29px 15px;
+      padding-inline: 25px;
     }
 
     @include desktop {
+      padding-inline: 0;
       padding-block: 31px 28px;
       align-items: center;
     }
   }
+}
 
-  &__item {
-    width: 50%;
-    flex-grow: 1;
+.main-footer__item {
+  width: 50%;
+  flex-grow: 1;
 
-    @include tablet {
-      width: calc(100% / 3);
-      flex-grow: 0;
-    }
-  }
-
-  &__item-logo {
-    width: calc(100% / 3);
+  @include tablet {
+    width: auto;
     flex-grow: 0;
   }
+}
 
-  &__social {
-    margin-inline-start: auto;
-    margin-block-end: 20px;
+.main-footer__item-logo {
+  margin-block-end: 5px;
+  margin-inline-start: 4px;
+  width: calc(100% / 3);
+  flex-grow: 0;
 
-    @include tablet {
-      margin: 0;
-    }
+  @include tablet {
+    width: auto;
   }
 
-  &__devs {
-    margin-inline-start: auto;
+  @include desktop {
+    width: auto;
+    margin-inline-start: 10px;
+  }
+}
 
-    @include tablet {
-      margin: 0;
-      display: flex;
-      justify-content: end;
-    }
+.main-footer__social {
+  margin-block-start: 5px;
+  margin-inline-start: auto;
+  margin-block-end: 20px;
+
+  @include tablet {
+    margin-block: 0;
+    margin-block-start: 7px;
+    margin-inline-start: 15px;
   }
 
-  &__devs-link {
-    text-decoration: none;
-    color: inherit;
+  @include desktop {
+    margin-block-start: 0;
+    margin-block-end: 11px;
+  }
+}
+
+.main-footer__devs {
+  margin-inline-start: auto;
+
+  @include tablet {
+    margin: 0;
     display: flex;
-    align-items: center;
-    font-size: 11px;
-    line-height: calc(13 / 11);
+    justify-content: end;
+  }
+}
 
-    @include tablet {
-      font-size: 16px;
-      line-height: calc(19 / 16);
-    }
+.main-footer__devs-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  line-height: calc(13 / 11);
+
+  @include tablet {
+    font-size: 16px;
+    line-height: calc(19 / 16);
+    margin-block-start: 9px;
   }
 
-  &__devs-icon {
-    margin-inline-start: 8px;
+  @include desktop {
+    margin-block-end: 15px;
+    margin-inline-end: 2px;
+  }
+}
 
-    @include tablet {
-      width: 26px;
-      height: 32px;
-    }
+.main-footer__devs-icon {
+  margin-inline-start: 8px;
+
+  @include tablet {
+    width: 26px;
+    height: 32px;
+  }
+
+  @include desktop {
+    margin-inline-start: 12px;
   }
 }

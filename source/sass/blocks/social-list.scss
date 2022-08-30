@@ -10,6 +10,7 @@
     justify-content: flex-end;
 
     @include tablet {
+      gap: 32px;
       justify-content: center;
     }
   }

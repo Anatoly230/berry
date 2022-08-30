@@ -1,20 +1,20 @@
 .catalog {
-  @include section-wrapper;
   position: relative;
-  padding-block: 64px 90px;
+  padding-block: 64px 69px;
 
   @include tablet {
-    padding-block: 100px 142px;
+    padding-block: 101px 142px;
   }
 
   &__title {
     margin-block-end: 64px;
 
     @include tablet {
-
-      margin-block-end: 72px;
+      margin-block-end: 71px;
     }
 
-    @include desktop {}
+    @include desktop {
+      margin-block-end: 91px;
+    }
   }
 }

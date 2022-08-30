@@ -1,4 +1,5 @@
 .logo {
+  text-decoration: none;
   display: block;
   width: 42px;
   overflow: hidden;
@@ -10,10 +11,12 @@
 }
 
 .logo__pic {
-  height: 50px;
+  height: 44px;
   width: auto;
 
-  @include tablet {}
+  @include tablet {
+    height: 50px;
+  }
 
   &:hover .logo__pic-leafs,
   &:hover .logo__pic-text path {
@@ -26,7 +29,7 @@
   }
 
   &--active:hover .logo__pic-leafs,
-  &--active:hover .logo__pic-text path  {
+  &--active:hover .logo__pic-text path {
     fill: $green;
   }
 }
@@ -37,5 +40,4 @@
   @include tablet {
     display: initial;
   }
-
 }

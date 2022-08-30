@@ -1,0 +1,8 @@
+.main__catalog {
+  @include section-wrapper;
+}
+
+.main__news {
+  @include section-wrapper;
+  padding-inline: 26px;
+}

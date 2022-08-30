@@ -54,7 +54,7 @@
             </g>
           </svg>
         </a>
-        <button class="header__toggle-menu toggle-menu toggle-menu--hide" type="button" aria-label="зфкрыть меню">
+        <button class="header__toggle-menu toggle-menu toggle-menu--hide" type="button" aria-label="закрыть меню">
         </button>
       </div>
       <ul class="header__menu menu">
@@ -74,14 +74,14 @@
     </nav>
   </header>
   <main class="page-body__order order">
-    <h1 class="order__title heading">Закажи ягоды</h1>
+    <h1 class="order__title heading heading--form">Закажи ягоды</h1>
     <p class="order__desc branch">Мы&nbsp;соберём для вас ягоды и&nbsp;доставим их&nbsp;в&nbsp;удобном для вас
-      виде&nbsp;&mdash; свежими или замороженными</p>
+      виде&nbsp;- свежими или замороженными</p>
     <section class="order__set">
       <h2 class="visually-hidden">Выбрать ягоды</h2>
-      <form class="form branch" action="echo.htmlacademy.ru" method="post">
+      <form class="form branch" action="https://echo.htmlacademy.ru" method="post">
 
-        <fieldset class="form__field field-group field-group--berry">
+        <fieldset class="form__field form__field--berry field-group field-group--berry">
           <legend class="field-group__title">Выберите ягоды</legend>
           <div class="field-group__wrapper">
             <div class="field-group__item  field">
@@ -96,12 +96,12 @@
             </div>
             <div class="field-group__item  field">
               <input class="field__item-select" id="blueberry" type="checkbox" name="berry" value="blueberry">
-              <label class="field__name" for="blueberry"><span
+              <label class="field__name field__name--small" for="blueberry"><span
                   class="field__thing-item field__thing-item--checkbox"></span>голубика</label>
             </div>
             <div class="field-group__item  field">
               <input class="field__item-select" id="blackberry" type="checkbox" name="berry" value="blackberry">
-              <label class="field__name" for="blackberry"><span
+              <label class="field__name field__name--small" for="blackberry"><span
                   class="field__thing-item field__thing-item--checkbox"></span>ежевика</label>
             </div>
             <div class="field-group__item  field">
@@ -139,18 +139,18 @@
           </div>
         </fieldset>
 
-        <fieldset class="form__field field-group field-group--storage">
-          <legend class="field-group__title">Вид хранения</legend>
+        <fieldset class="form__field form__field--storage field-group field-group--storage">
+          <legend class="field-group__title field-group__title--storage">Вид хранения</legend>
           <div class="field-group__wrapper field-group__wrapper--storage">
             <div class="field-group__item  field">
               <input class="field__item-select" id="fresh" type="checkbox" name="storage" value="fresh">
-              <label class="field__name" for="fresh"><span
-                  class="field__thing-item field__thing-item--checkbox"></span>свежие ягоды</label>
+              <label class="field__name " for="fresh"><span
+                  class="field__thing-item field__thing-item--indent field__thing-item--checkbox"></span>свежие ягоды</label>
             </div>
             <div class="field-group__item  field">
               <input class="field__item-select" id="frozen" type="checkbox" name="storage" value="frozen">
               <label class="field__name" for="frozen"><span
-                  class="field__thing-item field__thing-item--checkbox"></span>замороженые ягоды</label>
+                  class="field__thing-item field__thing-item--indent field__thing-item--checkbox"></span>замороженые ягоды</label>
             </div>
             <div class="field-group__item  field">
               <input class="field__item-select" id="mix" type="checkbox" name="storage" value="mix">
@@ -160,14 +160,13 @@
           </div>
         </fieldset>
 
-        <fieldset class="form__field field-group field-group--receipt">
-          <legend class="field-group__title">Способ доставки</legend>
+        <fieldset class="form__field form__field--receipt field-group field-group--receipt">
+          <legend class="field-group__title field-group__title--receipt">Способ доставки</legend>
           <div class="field-group__wrapper field-group__wrapper--receipt">
             <div class="field-group__item  field">
               <input class="field__item-select" id="delivery" type="radio" name="receipt" value="delivery" checked>
               <label class="field__name field__name--short" for="delivery"><span
-                  class="field__thing-item field__thing-item--radio"></span>Доставка<br>(по&nbsp;СПБ в&nbsp;пределах
-                КАД)</label>
+                  class="field__thing-item field__thing-item--radio"></span>Доставка<br>(по&nbsp;СПБ в&nbsp;пределах &nbsp;КАД)</label>
             </div>
             <div class="field-group__item  field">
               <input class="field__item-select" id="pickup" type="radio" name="receipt" value="pickup">
@@ -177,39 +176,39 @@
             </div>
           </div>
         </fieldset>
-        <fieldset class="form__field field-group field-group--contacts">
-          <legend class="field-group__title">Ваши контакты</legend>
+        <fieldset class="form__field form__field--contacts field-group field-group--contacts">
+          <legend class="field-group__title field-group__title--contacts">Ваши контакты</legend>
           <div class="field-group__wrapper field-group__wrapper--contacts">
             <div class="field-group__item field">
               <label class="field__name field__name--text field__name--required" for="name">Имя</label>
               <input class="field__item field__item" id="name" type="text" name="name"
-                placeholder="Как к вам обращаться?">
+                placeholder="Как к вам обращаться?" required>
             </div>
             <div class="field-group__item field">
               <label class="field__name field__name--text field__name--required" for="phone">Телефон</label>
-              <input class="field__item" id="phone" type="tel" name="phone" placeholder="+7 ххх ххх хх хх">
+              <input class="field__item" id="phone" type="tel" name="phone" placeholder="+7 ххх ххх хх хх" required>
             </div>
             <div class="field-group__item field">
               <label class="field__name field__name--text field__name--required" for="mail">Email</label>
-              <input class="field__item" id="mail" type="email" name="mail" placeholder="Ваш email">
+              <input class="field__item" id="mail" type="email" name="mail" placeholder="Ваш email" required>
             </div>
             <div class="field-group__item field">
               <label class="field__name field__name--text field__name--required" for="address">Адрес</label>
-              <input class="field__item" id="address" type="text" name="address" placeholder="Адрес в Санкт-Петербурге">
+              <input class="field__item field__item--address" id="address" type="text" name="address" placeholder="Адрес в Санкт-Петербурге" required>
             </div>
             <div class="field-group__item field">
-              <p class="field__name field__name--text">Пожелания к&nbsp;заказу</p>
+              <p class="field__name field__name--message">Пожелания к&nbsp;заказу</p>
               <textarea class="field__item field__item--message" name="form-message"
                 placeholder="Чем мы можем вам помочь?"></textarea>
             </div>
           </div>
         </fieldset>
-        <button class="form__submit  btn" type="submit">Заказать</button>
+        <button class="form__submit btn btn--promo" type="submit">Заказать</button>
       </form>
     </section>
-    <section class="order__contacts contacts">
+    <section class="order__contacts contacts contacts--form">
       <div class="contacts__wrapper">
-        <h2 class="contacts__title heading">Где забрать ягоды?</h2>
+        <h2 class="contacts__title heading">Где забрать  &nbsp;ягоды?</h2>
         <p class="contacts__desc">Забери ягоды с&nbsp;нашего склада по&nbsp;адресу:</p>
         <address class="contacts__info-item contacts__info-item--addres">
           <svg class="contacts__info-icon" width="15" height="23">
@@ -217,12 +216,12 @@
           </svg>
           Набережная Обводного канала, 101
         </address>
-        <a href="tel:+79105244118" class="contacts__info-item">
+        <a href="tel:+79105244118" class="contacts__info-item contacts__info-item--tel">
           <svg class="contacts__info-icon" width="15" height="20">
             <use xlink:href="./img/icons/sprite.svg#call"></use>
           </svg>
           + 7&nbsp;910&nbsp;524 41&nbsp;18</a>
-        <a href="mailto:info@yagoda.ru" class="contacts__info-item">
+        <a href="mailto:info@yagoda.ru" class="contacts__info-item contacts__info-item--mail">
           <svg class="contacts__info-icon" width="18" height="14">
             <use xlink:href="./img/icons/sprite.svg#mail"></use>
           </svg>
@@ -252,7 +251,7 @@
   <footer class="page-body__footer main-footer">
     <div class="main-footer__wrapper">
       <div class="main-footer__item main-footer__item-logo">
-        <a class="logo" aria-label="на главную страницу">
+        <a href="./index.html" class="logo" aria-label="на главную страницу">
           <svg class="logo__pic" viewBox="0 0 123 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="logo__pic-body"
               d="M39.86 28.4801C39.86 24.3501 36.85 22.8801 36.52 22.7301C36.53 22.6301 36.53 22.5301 36.53 22.4401C36.64 21.7801 36.87 19.9701 36.48 18.2701C36.32 17.5501 35.96 16.9401 35.56 16.4301C33.28 11.5301 27.36 9.99005 20.4 9.99005C13.38 9.99005 7.42 11.5601 5.18 16.5601C4.82 17.0501 4.51 17.6101 4.36 18.2701C4.04 19.6901 4.15 21.1801 4.25 22.0301C4.26 22.2701 4.27 22.5101 4.29 22.7501C3.84 22.9601 1 24.4601 1 28.4801C1 32.8501 3.84 34.0901 3.84 34.0901C3.84 34.0901 3.87 39.2501 7.06 42.0401C10.24 44.8201 13.58 44.84 13.58 44.84C13.58 44.84 15.32 48.51 20.43 48.51C25.54 48.51 27.28 44.84 27.28 44.84C27.28 44.84 30.74 44.3301 33.8 42.0401C36.86 39.7501 36.78 34.0901 36.78 34.0901C36.78 34.0901 39.86 32.8601 39.86 28.4801Z"

@@ -6,8 +6,9 @@
 
 
   @include tablet {
+    grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
     column-gap: 52px;
-    padding-inline: 68px;
+    padding-inline: 66px;
     row-gap: 52px;
   }
 
@@ -17,16 +18,16 @@
     column-gap: 24px;
     padding-inline: 0;
   }
+}
 
-  &__item {
-    margin-block-end: 24px;
+.berryes__item {
+  margin-block-end: 25px;
 
-    @include tablet {
-      margin: 0;
-    }
+  @include tablet {
+    margin: 0;
+  }
 
-    &:last-of-type {
-      margin-block-end: 0;
-    }
+  &:last-of-type {
+    margin-block-end: 0;
   }
 }
