@@ -2,10 +2,6 @@
   display: flex;
   flex-direction: column;
 
-  // &:last-of-type:not(&:first-of-type) {
-  //   margin: 0;
-  // }
-
   &--hide-tablet {
     @include tablet-only {
       visibility: hidden;
@@ -55,7 +51,7 @@
     line-height: calc(20 / 16);
   }
 
-  &:invalid {
+  &--required:invalid {
     border-color: $error;
   }
 }
