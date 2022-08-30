@@ -1,6 +1,7 @@
 function equating(domElem, colCount, rowCount = "undefined", section = "1fr") {
-  let element = document.querySelector(`.${domElem}`);
-  let childrens;
+  let element = document.querySelector(`.${domElem}`),
+    childrens,
+    rows;
 
   if (element !== null) {
     childrens = element.childElementCount;
@@ -10,11 +11,19 @@ function equating(domElem, colCount, rowCount = "undefined", section = "1fr") {
   }
 
   let count = childrens % colCount !== 0 ? Math.ceil(childrens / colCount) : childrens / colCount;
-  let rows = Number(rowCount) == Number(rowCount) ? count = rowCount : count;
+
+  if (colCount * rowCount < childrens) {
+    rows = count;
+  } else {
+    rows = Number(rowCount) == Number(rowCount) ? count = rowCount : count;
+  }
   element.style.gridAutoFlow = 'column';
   element.style.gridTemplateRows = `repeat(${rows}, auto)`;
   element.style.gridTemplateColumns = `repeat(${colCount}, ${section})`;
 }
+
+
+
 
 function getScreenSize() {
   if (this.screen.width < 768) {
